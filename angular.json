@@ -23,6 +23,9 @@
               "src/assets"
             ],
             "styles": [
+              "src/app/themes/bootstrap.scss",
+              "src/app/themes/material.scss",
+              "src/assets/icons.css",
               "src/styles.css"
             ],
             "scripts": []
