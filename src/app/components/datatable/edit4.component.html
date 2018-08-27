@@ -1,0 +1,31 @@
+<div class="ui-g ui-g-8">
+  <p-dataTable [value]="data" [rows]="4" [paginator]="true" [editable]="true">
+    <p-column field="dashboardId" header="dashboardId" [editable]="isEditable" [sortable]="true" filterMatchMode="in" [style]="{'overflow':'visible'}">
+      <ng-template let-col let-row="rowData" let-index="rowIndex" pTemplate="body">
+        <span *ngIf="!isEditable">{{row.dashboardId}}</span>
+        <!--<span *ngIf="isEditable" ><input type="text" [(ngModel)]="row.dashboardId"></span>-->
+      </ng-template>
+    </p-column>
+
+    <p-column field="dashboardName" header="dashboardName" [editable]="isEditable" [sortable]="true" filterMatchMode="in" [style]="{'overflow':'visible'}">
+      <ng-template let-col let-row="rowData" let-index="rowIndex" pTemplate="body">
+        <span *ngIf="!isEditable">{{row.dashboardName}}</span>
+        <!--<span *ngIf="isEditable"><input type="text" [(ngModel)]="row.dashboardName"></span>-->
+      </ng-template>
+    </p-column>
+    <p-column field="Created On" header="Created On" [editable]="isEditable" [sortable]="true" filterMatchMode="in" [style]="{'overflow':'visible'}">
+      <ng-template let-col let-row="rowData" let-index="rowIndex" pTemplate="body">
+        <span *ngIf="!isEditable">{{row.dashboardName}}</span>
+        <!--<span *ngIf="isEditable"><input type="text" [(ngModel)]="row.CreatedOn"></span>-->
+      </ng-template>
+    </p-column>
+
+    <!-- <p-column header="##"> -->
+    <p-column>
+      <ng-template let-rowIndexValue="rowIndex" pTemplate="body">
+        <button class="ui-button-danger" type="button" pButton (click)="onDeleteRow(rowIndexValue)" icon="fa-remove"></button>
+        <button class="" type="button" pButton (click)="onEditRow(rowIndexValue)" icon="far fa-edit"></button>
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+</div>

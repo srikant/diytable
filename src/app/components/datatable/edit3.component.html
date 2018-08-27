@@ -1,0 +1,38 @@
+<button (click)="getData()">Load Data</button>
+
+<p-dataTable [value]="data" [editable]="true">
+  <p-column field="name" header="Name">
+    <ng-template let-row="rowData" pTemplate="body">
+      <div *ngIf="!row.isEditable">{{row.name}}</div>
+      <div *ngIf="row.isEditable">
+        <input type="text" [(ngModel)]="row.name">
+      </div>
+    </ng-template>
+  </p-column>
+  <p-column field="city" header="City">
+    <ng-template let-row="rowData" pTemplate="body">
+      <div *ngIf="!row.isEditable">{{row.city}}</div>
+      <div *ngIf="row.isEditable">
+        <input type="text" [(ngModel)]="row.city">
+      </div>
+    </ng-template>
+  </p-column>
+  <p-column field="country" header="Country">
+    <ng-template let-row="rowData" pTemplate="body">
+      <div *ngIf="!row.isEditable">{{row.country}}</div>
+      <div *ngIf="row.isEditable">
+        <input type="text" [(ngModel)]="row.country">
+      </div>
+    </ng-template>
+  </p-column>
+  <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="editRow(row)">Edit</button>
+    </ng-template>
+  </p-column>
+  <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="save(row)">Save</button>
+    </ng-template>
+  </p-column>
+</p-dataTable>

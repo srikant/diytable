@@ -1,0 +1,10 @@
+<h2>PrimeNG Issue Template</h2>
+<h3>Please select a png file on your PC</h3>
+<p-fileUpload name="myfile[]" url="/rest/upload/logo" maxFileSize="5000000" accept="image/png" (onUpload)="onUpload($event)">
+
+  <ng-template pTemplate="content">
+    <ul *ngIf="uploadedFiles.length">
+      <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+    </ul>
+  </ng-template>
+</p-fileUpload>

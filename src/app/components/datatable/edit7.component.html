@@ -1,0 +1,78 @@
+<h2>PrimeNG Issue Template</h2>
+
+<p>Add TO List</p>
+
+<p>COUNT: {{count}}</p>
+
+<p-dataTable [value]="list">
+  <p-column field="label" header="label">
+  </p-column>
+
+  <p-column>
+    <ng-template let-col="rowData" pTemplate="header">
+      <button pButton type="button" icon="ui-icon-add" (click)="add()"></button>
+    </ng-template>
+    <ng-template let-col="rowData" pTemplate="body">
+      ....
+    </ng-template>
+  </p-column>
+</p-dataTable>
+
+<p>with ngFor</p>
+
+<li *ngFor="let item of list; let i = index; trackBy: trackByFn">
+  {{item.label}}</li>
+<!--
+  https://stackblitz.com/edit/angular-xncw9a?file=app%2Fapp.component.html - DONE
+
+How to disable check box in primeng datatable
+https://stackoverflow.com/questions/43972565/how-to-disable-check-box-in-primeng-datatable
+
+https://forum.primefaces.org/viewtopic.php?f=35&t=47101&p=155122&hilit=disable#p155122
+
+Enable a particular column while editing that row in PrimeNG datatable
+https://stackoverflow.com/questions/50698292/enable-a-particular-column-while-editing-that-row-in-primeng-datatable
+
+https://stackblitz.com/edit/angular-fo376x - DONE
+
+How to make a single Primeng DataTable row editable on a button click using in Angular 2
+https://stackoverflow.com/questions/45612676/how-to-make-a-single-primeng-datatable-row-editable-on-a-button-click-using-in-a
+
+https://stackblitz.com/edit/angular-evo5ly - DONE
+
+http://plnkr.co/edit/cSFExQA6sxyeg0BxPN2Y?p=preview - DONE
+
+PrimeNG datatable not editable
+https://stackoverflow.com/questions/46729973/primeng-datatable-not-editable
+
+https://plnkr.co/edit/336CtXteAvLJbvncLrUO?p=preview - DONE
+
+
+https://plnkr.co/edit/ID3X0qxXcLnGWYc23kGl?p=preview - done
+hover
+
+How to give inline edit and delete button along with new button in prime ng for angular2 applications
+https://stackoverflow.com/questions/50504940/how-to-give-inline-edit-and-delete-button-along-with-new-button-in-prime-ng-for
+
+Angular 5 - Add new line to a table, and make it editable
+https://stackoverflow.com/questions/50395916/angular-5-add-new-line-to-a-table-and-make-it-editable/50396047#50396047
+
+
+https://www.primefaces.org/primeng/#/datatable/editable
+
+dataTable add row on the fly
+http://plnkr.co/edit/MQ5FEOcKTMeRYf8MtBfs?p=preview - Done
+https://github.com/primefaces/primeng/issues/2815
+http://plnkr.co/edit/YNKt89pVMsZAN4zRAnsk?p=preview - Done
+
+https://forum.primefaces.org/search.php?keywords=edit+table&fid%5B0%5D=3
+https://forum.primefaces.org/viewtopic.php?t=49454
+
+Customise turbotable cell content
+https://forum.primefaces.org/viewtopic.php?t=54420
+
+https://forum.primefaces.org/viewtopic.php?t=54220
+
+https://forum.primefaces.org/viewtopic.php?t=56130
+https://forum.primefaces.org/viewtopic.php?t=54545
+-->

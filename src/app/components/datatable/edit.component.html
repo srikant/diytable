@@ -1,0 +1,40 @@
+<button (click)="getData()">Load Data</button>
+<button (click)="addNew()">Add New</button>
+
+<p-dataTable [immutable]="false" [value]="data" [editable]="true">
+  <p-column field="name" header="Name">
+    <ng-template let-row="rowData" pTemplate="body">
+      <div *ngIf="!row.isEditable">{{row.name}}</div>
+      <div *ngIf="row.isEditable">
+        <input type="text" [(ngModel)]="row.name">
+      </div>
+    </ng-template>
+  </p-column>
+  <p-column field="value" header="Value">
+    <ng-template let-row="rowData" pTemplate="body">
+      <div *ngIf="!row.isEditable">{{row.value}}</div>
+      <div *ngIf="row.isEditable">
+        <input type="text" [(ngModel)]="row.value">
+      </div>
+    </ng-template>
+  </p-column>
+
+  <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="editRow(row)">Edit</button>
+    </ng-template>
+  </p-column>
+  <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="save(row)">Save</button>
+    </ng-template>
+
+  </p-column>
+  <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="delete(row)">Delete</button>
+    </ng-template>
+
+
+  </p-column>
+</p-dataTable>

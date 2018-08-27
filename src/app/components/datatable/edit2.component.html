@@ -1,0 +1,21 @@
+<p-dataTable [value]="tableData" editable="true" editMode="cell" (onEditInit)="onEditInit($event)" onEditComplete="onEditComplete($event)">
+	<p-column field="id" header="CUSTOMER*" [editable]="true"></p-column>
+	<p-column field="category" header="CATEGORY" [editable]="true">
+  </p-column>
+	<p-column field="featureName" header="FEATURE NAME" [sortable]="true" [editable]="true"></p-column>
+	<p-column field="devEstimate" header="DEV ESTIMATE" [editable]="true"></p-column>
+	<p-column field="supportEstimate" header="SUPPORT ESTIMATE" [editable]="true"></p-column>
+	<p-column field="started" header="STARTED" [editable]="true"></p-column>
+	<p-column field="release" header="RELEASE/TARGET" [sortable]="true" [editable]="true"></p-column>
+	<p-column field="notes" header="NOTES" [editable]="true"></p-column>
+
+	<p-column>
+		<ng-template let-col let-row="rowData" let-index="rowIndex" pTemplate="body">
+			<div [hidden]="!row.isEditable">
+				<button pButton type="button" label="Save"></button>
+				<button pButton type="button" label="Cancel"></button>
+				<button pButton type="button" label="Delete"></button>
+			</div>
+		</ng-template>
+	</p-column>
+</p-dataTable>
